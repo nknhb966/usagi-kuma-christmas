@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+<meta name="theme-color" content="#1b2350">
+<title>うさぎさんと ねぼすけ くまさんの クリスマス — AR えほん</title>
+<link rel="stylesheet" href="ehon/style.css?v=b19a2bfd2b">
+</head>
+<body>
+<div id="stage"></div>
+<div id="hud"></div>
+<!--
+  「うさぎさんと ねぼすけ くまさんの クリスマス」AR 本体（スマホのカメラで 印刷したページを映す）
+  このファイルは npm run build で作られます。動かすには、同じ場所に ehon フォルダが必要です。
+  絵本の中身は ehon/book.js、プログラムは ehon/engine.js にあります（元は books/ と system/engine/）。
+-->
+<script src="ehon/three.js?v=8c4e8554e2"></script>
+<script src="ehon/mindar.js?v=a1948473ec"></script>
+<script src="ehon/licenses.js?v=99099745ca"></script>
+<script src="ehon/pictures.js?v=41850d9c7a"></script>
+<script src="ehon/nurie.js?v=008a53af55"></script>
+<script src="ehon/book.js?v=dd3e6fde32"></script>
+<script src="ehon/engine.js?v=084fbc0e63"></script>
+<script>
+  if (window.EhonEngine) EhonEngine.start({ mode: 'ar', mind: 'ehon/targets.mind?v=d376e5dbaf' });
+  else document.body.insertAdjacentHTML('beforeend', '<p style="margin:2em;font:16px/1.7 sans-serif;color:#fff">ehon フォルダが 見つかりません。<br>この ファイルと いっしょに ehon フォルダも おいて（アップロードして）ください。</p>');
+</script>
+</body>
+</html>
